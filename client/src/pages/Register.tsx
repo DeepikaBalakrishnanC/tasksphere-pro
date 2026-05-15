@@ -64,7 +64,7 @@ const Register = () => {
           }
         );
 
-        navigate("/");
+        navigate("/dashboard");
       } catch(error) {
         setError(
           error instanceof Error

@@ -61,7 +61,7 @@ const Sidebar = () => {
 
         <NavLink
 
-          to="/"
+          to="/dashboard"
 
           className={linkClass}
 

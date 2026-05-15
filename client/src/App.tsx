@@ -19,6 +19,9 @@ import {
 import ProtectedRoute
 from "./components/ProtectedRoute";
 
+const Welcome =
+  lazy(() => import("./pages/Welcome"));
+
 const Dashboard =
   lazy(() => import("./pages/Dashboard"));
 
@@ -46,13 +49,18 @@ function App() {
 
       <Suspense
         fallback={
-          <div className="min-h-screen bg-slate-950 text-white grid place-items-center">
-            Loading TaskSphere...
+          <div className="min-h-screen bg-[#101318] text-[#f7f3e8] grid place-items-center">
+            Loading PulseForge...
           </div>
         }
       >
 
         <Routes>
+
+          <Route
+            path="/"
+            element={<Welcome />}
+          />
 
           <Route
             path="/login"
@@ -66,7 +74,7 @@ function App() {
 
           <Route
 
-            path="/"
+            path="/dashboard"
 
             element={
 
