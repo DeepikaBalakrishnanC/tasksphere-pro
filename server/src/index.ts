@@ -47,7 +47,12 @@ const app =
   express();
 
 
-app.use(cors());
+app.use(cors({
+
+  origin:
+    "https://tasksphere-7z15lrjk1-deepikabalakrishnancs-projects.vercel.app"
+
+}));
 
 app.use(express.json());
 
