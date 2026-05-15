@@ -13,7 +13,7 @@ const httpLink =
   createHttpLink({
 
     uri:
-      "http://localhost:5001/graphql",
+      import.meta.env.VITE_API_URL,
 
   });
 
