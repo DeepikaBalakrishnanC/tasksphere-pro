@@ -1,0 +1,40 @@
+name: advanced-specialized-app-ci
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install client dependencies
+        working-directory: client
+        run: npm ci
+
+      - name: Lint client
+        working-directory: client
+        run: npm run lint
+
+      - name: Build client
+        working-directory: client
+        run: npm run build
+
+      - name: Install server dependencies
+        working-directory: server
+        run: npm ci
+
+      - name: Build server
+        working-directory: server
+        run: npm run build
